@@ -15,7 +15,45 @@ class Node:
         self.next = next
 
 
+def get_list_size(head_of_list: Node) -> (int, Node):
+    list_size = 0
+
+    while head_of_list is not None:
+        list_size += 1
+        head_of_list = head_of_list.next
+
+    return list_size, head_of_list
+
+
+def get_kth_elem(head_of_list: Node, k: int) -> Node:
+
+    for i in range(k):
+        head_of_list = head_of_list.next
+
+    return head_of_list
+
+
 def get_intersection(l1: Node, l2: Node) -> Node:
+    l1_size, l1_last_node = get_list_size(l1)
+    l2_size, l2_last_node = get_list_size(l2)
+
+    if l1_last_node is not l2_last_node:
+        return None
+
+    diff = abs(l1_size - l2_size)
+    if l1_size > l2_size:
+        l1 = get_kth_elem(l1, diff)
+    elif l1_size < l2_size:
+        l2 = get_kth_elem(l2, diff)
+
+    while l1 is not l2:
+        l1 = l1.next
+        l2 = l2.next
+
+    return l1
+
+
+def get_intersection_(l1: Node, l2: Node) -> Node:
 
     if l1 is None or l2 is None:
         return None
