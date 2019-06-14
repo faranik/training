@@ -1,4 +1,4 @@
-import os
+
 import unittest
 from lists.p27 import Node
 from lists.p27 import get_intersection

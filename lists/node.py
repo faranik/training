@@ -1,0 +1,1 @@
+class Node:    """    A node of a single linked list.    """    def __init__(self, data: int, next):        self.data = data        self.next = next

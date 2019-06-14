@@ -8,11 +8,7 @@ Source: Cracking the Coding Interview: 189 Programming Questions and Solutions
 by Gayle Laakmann McDowell
 """
 
-
-class Node:
-    def __init__(self, data: int, next):
-        self.data = data
-        self.next = next
+from lists.node import Node
 
 
 def get_list_size(head_of_list: Node) -> (int, Node):
