@@ -21,6 +21,9 @@ class TestListLoop(unittest.TestCase):
 
         n4.next = n2
 
+        #import pdb
+        #pdb.set_trace()
+
         self.assertTrue(get_loop(n1) is n2)
 
     def test_get_loop_None(self):
@@ -43,5 +46,21 @@ class TestListLoop(unittest.TestCase):
         :return: void
         """
         n = Node(1, None)
+        n.next = n
 
         self.assertTrue(get_loop(n) is n)
+
+    def test_get_loop_no_loop(self):
+        """
+        list: 1 -> 2 -> 3 -> 4
+
+        get_loop should return None as there is not a loop
+
+        :return: void
+        """
+        n = Node(4, None)
+        n = Node(3, n)
+        n = Node(2, n)
+        n = Node(1, n)
+
+        self.assertTrue(get_loop(n) is None)
