@@ -26,11 +26,11 @@ class MyQueue:
         self.stack_old = Stack()
 
     def push(self, elem: int):
+        if not isinstance(elem, int):
+            raise ValueError("Invalid input. " + str(elem) + " is not a valid argument.")
         self.stack_new.push(elem)
 
     def pop(self) -> int:
-        print("Old: ", self.stack_old.arr)
-        print("New: ", self.stack_new.arr)
         elem, success = self.stack_old.pop()
 
         if not success:
