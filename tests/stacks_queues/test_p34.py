@@ -46,7 +46,6 @@ class TestMyQueue(unittest.TestCase):
 
     def test_push_big_number(self):
         self.queue.push(2347182734618236419873624187236418237641872364)
-        print(self.queue.pop())
 
     def test_pop_empty_queue(self):
         """

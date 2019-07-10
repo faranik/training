@@ -11,9 +11,9 @@ class TestCreateMinimalTree(unittest.TestCase):
         Input: [1, 2, 3, 4, 5, ,6 ,7]
         Output:         4
                       /   \
-                    2      6
-                  /  \    /   \
-                1    3   5    7
+                    2       6
+                  /  \\    /   \\
+                1     3   5     7
         :return: void
         """
         tree = create_minimal_tree([1, 2, 3, 4, 5, 6, 7])
